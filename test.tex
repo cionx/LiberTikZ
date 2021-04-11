@@ -1,0 +1,41 @@
+\documentclass{scrartcl}
+
+\usepackage{libertinus-otf}
+\usepackage{tikz-cd}
+\usepackage{libertikz}
+
+
+\newcommand{\tikzlogo}{Ti\textit{\textrm{k}}Z}
+
+
+\title{Liber\tikzlogo{}}
+\subtitle{Libertinus Looking Arrows in \tikzlogo{}}
+\author{Jendrik Stelzner}
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+
+A basic example using tikzcd:
+
+\[
+	\begin{tikzcd}
+		A
+		\arrow{r}
+		\arrow{d}
+		&
+		B
+		\arrow{d}
+		\\
+		C
+		\arrow{r}
+		&
+		D
+	\end{tikzcd}
+\]
+
+\end{document}
+
