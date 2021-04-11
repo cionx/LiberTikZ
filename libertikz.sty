@@ -1,9 +1,13 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{libertikz}[2021/04/11 v0.1 Libertinus looking arrows for TikZ]
+
+\RequirePackage{tikz}
 \usetikzlibrary{arrows.meta}
 
 % defines the arrow tip "libertinustip"
 \input{arrow_tip.tex}
 
-\tikzset{  
+\tikzset{
 	> = {libertinustip},
 }
 
