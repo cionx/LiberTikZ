@@ -165,6 +165,9 @@
 }
 
 
+
+
+
 % EQUAL SIGN
 
 % By default, tikz-cd uses 'double line' to control the
@@ -179,4 +182,17 @@
 	double=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}},
 	equal/.code={\tikzcdset{double equal line}\pgfsetarrows{tikzcd implies cap-tikzcd implies cap}},
 	double equal line/.append style = {double distance = 2.3*rule_thickness}
+}
+
+
+
+
+
+%%%%% MAPSTO WITH ONE LINE
+
+% The side of the bar for \mapsto & Co. needs to be
+% adjusted to Libertinus.
+
+\tikzcdset{
+	tikzcd bar/.tip={Bar[width=+1.74pt 4 0.9]},
 }
