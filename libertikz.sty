@@ -86,14 +86,14 @@
 
 %%%%% IMPLICATION ARROWS
 
-% The code below is copy-pasted from the previous one,
-% but has been slighty adjusted:
+% The code below is copy-pasted from the previous one, but
+% has been slighty adjusted:
 %
 % - The default size is slithly larger
 %
 % - The bounding box of the tip is slithly enlarged to
-%   ensure that the two lines of the arrow don’t cross
-%   over the arrow tip
+%   ensure that the two lines of the arrow don’t cross over
+%   the arrow tip
 
 \pgfdeclarearrow{%
 	name = {Libertinus Implies},
@@ -156,12 +156,27 @@
 
 \tikzcdset{
 	tikzcd implies/.tip = {Libertinus Implies},
-	% Adjust the distance between the two lines:
-	% By default, tikz takes this value from the
-	% equality sign. But for Libertinus, the lines
-	% in \Rightarrow etc. are closer together than
-	% for the equality sign
-	% the value of 1.51 was determined by trial and error
+	% Adjust the distance between the two lines: By default,
+	% tikz takes this value from the equality sign. But for
+	% Libertinus, the lines in \Rightarrow etc. are closer
+	% together than for the equality sign the value of 1.51
+	% was determined by trial and error
 	double line/.append style = {double distance = 1.51*rule_thickness}
 }
 
+
+% EQUAL SIGN
+
+% By default, tikz-cd uses 'double line' to control the
+% distances of the two lines. But in Libertinus the equal
+% sign needs a larger distance. We therefore introduce a
+% new version of 'double line' for the 'equal' arrow in
+% tikzcd. (The code is copied from 'tikz-cd'.)
+
+\tikzcdset{
+	double equal line/.code={\tikzset{%
+	double equal sign distance,
+	double=\pgfkeysvalueof{/tikz/commutative diagrams/background color}}},
+	equal/.code={\tikzcdset{double equal line}\pgfsetarrows{tikzcd implies cap-tikzcd implies cap}},
+	double equal line/.append style = {double distance = 2.3*rule_thickness}
+}
