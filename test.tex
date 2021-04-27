@@ -2,39 +2,310 @@
 \addtokomafont{disposition}{\rmfamily}
 
 \usepackage{libertinus-otf}
+
+\usepackage{longtable}
+\usepackage{booktabs}
+
 \usepackage{tikz-cd}
+\usetikzlibrary{decorations.pathmorphing}
 \usepackage{libertikz}
 
 \newcommand{\tikzlogo}{Ti\textit{\textrm{k}}Z}
 
 \title{Liber\tikzlogo{}}
-\subtitle{Libertinus Looking Arrows in \tikzlogo{}}
+\subtitle{Libertinus looking arrows in \tikzlogo{}}
 \author{Jendrik Stelzner}
 \date{\today}
 
-
+\newcommand{\tablehead}{\textbf}
+\newcommand{\tipname}{\texttt}
 
 \begin{document}
 
 \maketitle
 
-A basic example using tikzcd:
 
-\[
-	\begin{tikzcd}
-		A
-		\arrow{r}
-		\arrow{d}
-		&
-		B
-		\arrow{d}
-		\\
-		C
-		\arrow{r}
-		&
-		D
-	\end{tikzcd}
-\]
+
+
+
+\section{Arrows and comparison}
+
+
+\subsection{Basic arrows}
+
+\begin{longtable}{l@{\qquad}l@{\qquad}l}
+	\toprule
+	\tablehead{\texttt{tikzcd} arrow}
+	&
+	\tablehead{Libertinus Math}
+	&
+	\tablehead{Liber\tikzlogo{}}
+	\\
+	\midrule
+	\tipname{to head}
+	&
+	$A \longrightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[to head]{r} & B \end{tikzcd}$
+	\\
+	\tipname{rightarrow}
+	&
+	$A \longrightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[rightarrow]{r} & B \end{tikzcd}$
+	\\
+	\tipname{leftarrow}
+	&
+	$A \longleftarrow B$
+	&
+	$\begin{tikzcd} A \arrow[leftarrow]{r} & B \end{tikzcd}$
+	\\
+	\tipname{leftrightarrow}
+	&
+	$A \longleftrightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[leftrightarrow]{r} & B \end{tikzcd}$
+	\\
+	\tipname{Rightarrow}
+	&
+	$A \Rightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[Rightarrow]{r} & B \end{tikzcd}$
+	\\
+	{}
+	&
+	$A \implies B$
+	&
+	{}
+	\\
+	\tipname{Leftarrow}
+	&
+	$A \Leftarrow B$
+	&
+	$\begin{tikzcd} A \arrow[Leftarrow]{r} & B \end{tikzcd}$
+	\\
+	{}
+	&
+	$A \impliedby B$
+	&
+	{}
+	\\
+	\tipname{Leftrightarrow}
+	&
+	$A \Leftrightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[Leftrightarrow]{r} & B \end{tikzcd}$
+	\\
+	{}
+	&
+	$A \iff B$
+	&
+	{}
+	\\
+	\midrule
+	\tipname{maps to}
+	&
+	$A \longmapsto B$
+	&
+	$\begin{tikzcd} A \arrow[maps to]{r} & B \end{tikzcd}$
+	\\
+	\tipname{mapsto}
+	&
+	$A \longmapsto B$
+	&
+	$\begin{tikzcd} A \arrow[mapsto]{r} & B \end{tikzcd}$
+	\\
+	\tipname{mapsfrom}
+	&
+	$A \longmapsfrom B$
+	&
+	$\begin{tikzcd} A \arrow[mapsfrom]{r} & B \end{tikzcd}$
+	\\
+	\tipname{Mapsto}
+	&
+	$A \Longmapsto B$
+	&
+	$\begin{tikzcd} A \arrow[Mapsto]{r} & B \end{tikzcd}$
+	\\
+	\tipname{Mapsfrom}
+	&
+	$A \Longmapsfrom B$
+	&
+	$\begin{tikzcd} A \arrow[Mapsfrom]{r} & B \end{tikzcd}$
+	\\
+	\midrule
+	\tipname{hook}
+	&
+	$A \hookrightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[hook]{r} & B \end{tikzcd}$
+	\\
+	\tipname{hook'}
+	&
+	{}
+	&
+	$\begin{tikzcd} A \arrow[hook']{r} & B \end{tikzcd}$
+	\\
+	\tipname{hookrightarrow}
+	&
+	$A \hookrightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[hookrightarrow]{r} & B \end{tikzcd}$
+	\\
+	\tipname{hooklefttarrow}
+	&
+	$A \hookleftarrow  B$
+	&
+	$\begin{tikzcd} A \arrow[hookleftarrow]{r} & B \end{tikzcd}$
+	\\
+	\midrule
+	\tipname{tail}
+	&
+	$A \rightarrowtail B$
+	&
+	$\begin{tikzcd} A \arrow[tail]{r} & B \end{tikzcd}$
+	\\
+	\tipname{rightarrowtail}
+	&
+	$A \rightarrowtail B$
+	&
+	$\begin{tikzcd} A \arrow[rightarrowtail]{r} & B \end{tikzcd}$
+	\\
+	\tipname{leftarrowtail}
+	&
+	$A \leftarrowtail B$
+	&
+	$\begin{tikzcd} A \arrow[leftarrowtail]{r} & B \end{tikzcd}$
+	\\
+	\midrule
+	\tipname{two heads}
+	&
+	$A \twoheadrightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[two heads]{r} & B \end{tikzcd}$
+	\\
+	\tipname{twoheadsrightarrow}
+	&
+	$A \twoheadrightarrow B$
+	&
+	$\begin{tikzcd} A \arrow[twoheadrightarrow]{r} & B \end{tikzcd}$
+	\\
+	\tipname{twoheadsleftarrow}
+	&
+	$A \twoheadleftarrow B$
+	&
+	$\begin{tikzcd} A \arrow[twoheadleftarrow]{r} & B \end{tikzcd}$
+	\\
+	\midrule
+	\tipname{harpoon}
+	&
+	$A \rightharpoonup B$
+	&
+	$\begin{tikzcd} A \arrow[harpoon]{r} & B \end{tikzcd}$
+	\\
+	\tipname{harpoon'}
+	&
+	$A \rightharpoondown B$
+	&
+	$\begin{tikzcd} A \arrow[harpoon']{r} & B \end{tikzcd}$
+	\\
+	\tipname{rightharpoonup}
+	&
+	$A \rightharpoonup B$
+	&
+	$\begin{tikzcd} A \arrow[rightharpoonup]{r} & B \end{tikzcd}$
+	\\
+	\tipname{rightharpoondown}
+	&
+	$A \rightharpoonup B$
+	&
+	$\begin{tikzcd} A \arrow[rightharpoondown]{r} & B \end{tikzcd}$
+	\\
+	\tipname{leftharpoonup}
+	&
+	$A \leftharpoonup B$
+	&
+	$\begin{tikzcd} A \arrow[leftharpoonup]{r} & B \end{tikzcd}$
+	\\
+	\tipname{leftharpoondown}
+	&
+	$A \leftharpoondown B$
+	&
+	$\begin{tikzcd} A \arrow[leftharpoondown]{r} & B \end{tikzcd}$
+	\\
+	\midrule
+	\tipname{dashed}
+	&
+	{}
+	&
+	$\begin{tikzcd} A \arrow[dashed]{r} & B \end{tikzcd}$
+	\\
+	\tipname{dashedrightarrow}
+	&
+	{}
+	&
+	$\begin{tikzcd} A \arrow[dashrightarrow]{r} & B \end{tikzcd}$
+	\\
+	\tipname{dashedleftarrow}
+	&
+	{}
+	&
+	$\begin{tikzcd} A \arrow[dashleftarrow]{r} & B \end{tikzcd}$
+	\\
+	\midrule
+	\tipname{squiggly}
+	&
+	$A \rightsquigarrow B$
+	&
+	$\begin{tikzcd} A \arrow[squiggly]{r} & B \end{tikzcd}$
+	\\
+	\tipname{rightsquigarrow}
+	&
+	$A \rightsquigarrow B$
+	&
+	$\begin{tikzcd} A \arrow[rightsquigarrow]{r} & B \end{tikzcd}$
+	\\
+	\tipname{leftsquigarrow}
+	&
+	$A \leftsquigarrow B$
+	&
+	$\begin{tikzcd} A \arrow[leftsquigarrow]{r} & B \end{tikzcd}$
+	\\
+	\tipname{leftrightsquigarrow}
+	&
+	{}
+	&
+	$\begin{tikzcd} A \arrow[leftrightsquigarrow]{r} & B \end{tikzcd}$
+	\\
+	\midrule
+	\tipname{no head}
+	&
+	{}
+	&
+	$\begin{tikzcd} A \arrow[no head]{r} & B \end{tikzcd}$
+	\\
+	\tipname{no tail}
+	&
+	{}
+	&
+	$\begin{tikzcd} A \arrow[no tail]{r} & B \end{tikzcd}$
+	\\
+	\tipname{dash}
+	&
+	{}
+	&
+	$\begin{tikzcd} A \arrow[dash]{r} & B \end{tikzcd}$
+	\\
+	\tipname{equal}
+	&
+	$A = B$
+	&
+	$\begin{tikzcd} A \arrow[equal]{r} & B \end{tikzcd}$
+	\\
+	\bottomrule
+\end{longtable}
+
+
 
 \end{document}
 
